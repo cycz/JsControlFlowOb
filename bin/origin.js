@@ -1,4 +1,4 @@
-document = 1
+document = '一个md5测试例子';
 /*
 * Add integers, wrapping at 2^32. This uses 16-bit operations internally
 * to work around bugs in some JS interpreters.

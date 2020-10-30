@@ -343,7 +343,8 @@ function getCheckFlag(flowindex, FunorProgram, funName, checkIndexDict) {
     if (Object.keys(checkIndexDict).indexOf(flowindex.toString()) < 0) {
         return false
     }
-    if (FunorProgram === 'Program') {
+
+    if (checkIndexDict[flowindex].ProgramOrFunc.toUpperCase() === 'PROGRAM') {
         return true
     }
     let checkNode = checkIndexDict[flowindex]
@@ -380,7 +381,7 @@ function initFuncFlow(main, allUselessArr, checkArr, checkName, inlinefunarr, fu
         bakflow.left = leftFlow
 
         let checkFlag = getCheckFlag(flowindex, 'func', funcName, checkIndexDict)
-        console.log(funcName + ' ' + flowindex + ' ' + checkFlag)
+        // console.log(funcName + ' ' + flowindex + ' ' + checkFlag)
         if (flowindex === 0) {
         }
         else if (r > 0.7 && checkArr.length > 0 || checkFlag) {
@@ -451,7 +452,7 @@ function initFlow(main, uselessArr, checkArr, checkName, indexName, funarr) {
         let leftFlow = new Flow(new FlowNode(babelNode))
         bakflow.left = leftFlow
         let checkFlag = getCheckFlag(flowindex, 'Program', undefined, checkIndexDict)
-        console.log(checkFlag)
+        // console.log(checkFlag)
         if (flowindex === 0) {
         } else if (flowindex === main.length - 1 && uselessArr.length > 0) {
             let judge = randomifJudge(undefined, checkName)
