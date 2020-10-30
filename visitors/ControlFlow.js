@@ -4,7 +4,7 @@
  * Author:cyz
  * Date:2020.10.14
  * Version:V1.0
- * github:https://github.com/cycz
+ * github:https://github.com/cycz/JsControlFlowOb
  * 欢迎star 提bug
  *****************************************************/
 const parser = require("@babel/parser");
